@@ -57,6 +57,21 @@ a:focus, a:hover { }
 
 hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto; }
 
+section { padding-bottom: 0; }
+section.white-bg { background: url('images/bg-white.png'); }
+section.white-bg .container { background-color: white; padding: 50px 0; }
+
+
+.btn-primary,
+.btn-primary:hover { background-color: #0091da; }
+
+.btn-primary,
+.gform_button { background-color: #0091da; border-radius: 25px; color: white; font-size: 20px; display: inline-block; padding: 5px 15px; text-transform: uppercase; }
+.btn-primary:hover,
+.gform_button:hover{ background-color: #454141; border-color: inherit; }
+.btn-primary:hover { border-color: #d6cec3; }
+
+
 
 /*------------------------------------------------------------------
     Header
@@ -70,7 +85,7 @@ hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto; }
 .navbar-social-media li:first-child { border-left: none; padding-right: 10px; }
 .navbar-social-media li:last-child { padding-right: 0; }
 
-
+.navbar-default { border-color: transparent; }
 
 /*------------------------------------------------------------------
     Navigation bar
@@ -111,6 +126,9 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 .home-3-header-columns .box { color: white; font-size: 20px; height: 475px; text-align: center; }
 .home-3-header-columns .box h3 { font-size: 36px; }
 
+
+.second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0091da; font-size: 48px; margin: 0 0 0 60px; padding: 25px; text-align: right; text-transform: uppercase; }
+.second-header p { color: #2c2c2e; font-size: 18px; padding: 20px 0; }
 
 /*------------------------------------------------------------------
     Blog
