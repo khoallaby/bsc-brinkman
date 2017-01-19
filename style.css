@@ -66,6 +66,7 @@ section.white-bg { background: url('images/bg-white.png'); background-color: tra
 section.white-bg h2 { color: #25282a; }
 section.white-bg h3 { color: #0091da; font-size: 26px; }
 section.white-bg .row { background-color: white; }
+section.white-bg.grey-inner-bg .row { background-color: #edf0f3; }
 
 
 .btn-primary,
@@ -143,6 +144,11 @@ section.second-header .row{ padding: 50px 20px; }
 .home-meaningful-places .container { }
 .home-meaningful-places .container .item { padding: 0; }
 .home-meaningful-places .container .item:first-child { padding: 0; }
+
+
+
+
+
 /*------------------------------------------------------------------
     Blog
 ------------------------------------------------------------------*/
@@ -204,6 +210,8 @@ section.second-header .row{ padding: 50px 20px; }
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 
+    .non-negotiables .row { padding: 30px 70px; }
+    .non-negotiables .row > div > p { padding: 0 70px; }
 
 }
 
