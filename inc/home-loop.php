@@ -5,6 +5,7 @@ get_template_part('inc/home-meaningful-places');
 #get_template_part('inc/slider-what-we-do');
 get_template_part('inc/home-our-non-negotiables');
 get_template_part('inc/home-impact');
+get_template_part('inc/home-news');
 
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
