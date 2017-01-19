@@ -1,0 +1,176 @@
+/*
+Theme Name: Brinkman
+Theme URI: http://brinkmancolorado.com
+Text Domain: blue-summit-creative-bootstrap-for-wordpress-child
+Template: snowbank
+Version: 1.0
+Tags: one-column, two-columns, right-sidebar, editor-style, footer-widgets, full-width-template
+License:
+License URI:
+Author: Blue Summit Creative
+Author URI: http://www.bluesummitcreative.com
+Description: Website Design
+*/
+
+
+
+
+/*------------------------------------------------------------------
+    Helper classes
+    General elements
+    Header
+    Navigation bar
+    Menu
+    Home Page
+    Blog
+    Sidebar
+    Pages
+    Footer
+------------------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------------------
+    Helper classes
+------------------------------------------------------------------*/
+.vcenter { position:relative; top:50%; transform: translateY(-50%); -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); }
+.no-gutter > [class*='col-'] { padding-right:0; padding-left:0; }
+
+
+
+/*------------------------------------------------------------------
+    General elements
+------------------------------------------------------------------*/
+
+
+body { font-family: 'Open Sans', sans-serif; }
+h1 { color: #00539b; font-size: 40px; font-weight: 800; text-transform: uppercase; }
+h2, h3 { font-family: 'Lora', serif; }
+.content h2 { color: #464141; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; margin: 40px 0 30px; }
+.content h3 { color: #77c044; font-size: 25px; font-weight: bold; margin-top: 0; }
+.content h4 { color: #383636; font-size: 20px; font-weight: bold; }
+.content p { margin-bottom: 30px; }
+a { color: #034694; }
+a:focus, a:hover { }
+
+
+/*------------------------------------------------------------------
+    Header
+------------------------------------------------------------------*/
+
+.navbar-social-media { color: white; float: right; }
+.navbar-social-media a { color: white; }
+.navbar-social-media li { border-left: 1px solid #0091da; display: inline-block; padding: 0 5px; }
+.navbar-social-media li.phone { font-size: 26px; }
+.navbar-social-media li a .fa { font-size: 16px; }
+.navbar-social-media li:first-child { border-left: none; padding-right: 10px; }
+.navbar-social-media li:last-child { padding-right: 0; }
+
+
+
+/*------------------------------------------------------------------
+    Navigation bar
+------------------------------------------------------------------*/
+
+
+nav.navbar { background-color: #25282a; }
+nav.navbar .container-fluid.menu { background-color: #171819; }
+
+
+
+
+/*------------------------------------------------------------------
+    Menu
+------------------------------------------------------------------*/
+.navbar-default .navbar-nav li >  a { color: white; font-size: 20px; }
+
+
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-nav .dropdown-menu > li > a:hover { color: #0091da; background-color: #171819; text-decoration: none;}
+
+.navbar-nav .dropdown-menu { background-color: #171819; }
+
+
+/*------------------------------------------------------------------
+    Home Page
+------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------
+    Blog
+------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------
+    Sidebar
+------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+    Pages
+------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------
+    Footer
+------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 479px) {
+}
+
+@media only screen and (min-width : 480px) {
+
+}
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (min-width : 768px) {
+
+}
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+
+}
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
