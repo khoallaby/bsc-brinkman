@@ -34,7 +34,8 @@ add_action( 'wp_enqueue_scripts', 'brinkman_enqueue_js', 2000 );
 
 
 
-#require_once dirname( __FILE__ ) . '/functions/class.base.php';
-#require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
+require_once dirname( __FILE__ ) . '/functions/class.base.php';
+require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
 
-#add_action( 'init', array(brinkman_cpt::get_instance(), 'init') );
+add_action( 'init', array(brinkman_cpt::get_instance(), 'init') );
+
