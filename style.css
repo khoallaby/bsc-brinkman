@@ -47,7 +47,7 @@ Description: Website Design
 
 body { font-family: 'Open Sans', sans-serif; }
 h1 { color: #00539b; font-size: 40px; font-weight: 800; text-transform: uppercase; }
-h2, h3 { font-family: 'Lora', serif; }
+h2, h3 { font-family: 'Lora', serif; text-transform: uppercase; }
 .content h2 { color: #464141; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; margin: 40px 0 30px; }
 .content h3 { color: #77c044; font-size: 25px; font-weight: bold; margin-top: 0; }
 .content h4 { color: #383636; font-size: 20px; font-weight: bold; }
@@ -55,11 +55,13 @@ h2, h3 { font-family: 'Lora', serif; }
 a { color: #034694; }
 a:focus, a:hover { }
 
-hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto; }
+hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto 20px auto; }
 
-section { padding-bottom: 0; }
-section.white-bg { background: url('images/bg-white.png'); }
-section.white-bg .container { background-color: white; padding: 50px 0; }
+section { background-color: #25282a; padding: 30px 0; }
+section h2 { font-size: 36px; color: white; margin-top: 0; }
+section.white-bg { background: url('images/bg-white.png'); background-color: transparent; padding: 0; }
+section.white-bg h2 { color: #25282a; }
+section.white-bg .container { background-color: white; padding: 40px 0; }
 
 
 .btn-primary,
@@ -122,14 +124,19 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 
 
 
-.home-3-header-columns { height: 475px; }
+.home-3-header-columns { height: 475px; padding: 0;}
 .home-3-header-columns .box { color: white; font-size: 20px; height: 475px; text-align: center; }
 .home-3-header-columns .box h3 { font-size: 36px; }
+.home-3-header-columns .box hr { margin-bottom: 10px; }
 
-
-.second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0091da; font-size: 48px; margin: 0 0 0 60px; padding: 25px; text-align: right; text-transform: uppercase; }
+.second-header { }
+section.second-header .container{ padding: 50px 60px; }
+.second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0091da; font-size: 48px; padding: 25px; text-align: right; text-transform: uppercase; }
 .second-header p { color: #2c2c2e; font-size: 18px; padding: 20px 0; }
 
+
+.home-meaningful-places .container { }
+.home-meaningful-places .container .item { padding: 0; }
 /*------------------------------------------------------------------
     Blog
 ------------------------------------------------------------------*/
