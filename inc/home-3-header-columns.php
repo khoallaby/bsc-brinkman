@@ -15,7 +15,7 @@ $image = get_field('3_header_columns_background');
                     <div class="col-xs-12 col-sm-4 col-md-4 box" style="background-image: url('<?php echo $background['url']; ?>');">
                         <div class="contents vcenter">
                             <img src="<?php echo $icon['sizes']['large']; ?>" /><br />
-                            <h3><?php echo get_sub_field( 'title' ); ?></h3>
+                            <h2><?php echo get_sub_field( 'title' ); ?></h2>
                             <hr class="blue-bar" />
                             <?php echo get_sub_field( 'description' ); ?>
                         </div>

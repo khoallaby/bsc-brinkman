@@ -45,12 +45,12 @@ Description: Website Design
 ------------------------------------------------------------------*/
 
 
-body { font-family: freight-sans-pro, sans-serif; }
-h1 { color: #00539b; font-size: 40px; font-weight: 800; text-transform: uppercase; }
-h2, h3 { font-family: 'Lora', serif; text-transform: uppercase; }
-.content h2 { color: #464141; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; margin: 40px 0 30px; }
-.content h3 { color: #77c044; font-size: 25px; font-weight: bold; margin-top: 0; }
-.content h4 { color: #383636; font-size: 20px; font-weight: bold; }
+body { font-family: "freight-sans-pro", sans-serif; }
+body p { font-family: "freight-sans-pro-book", sans-serif; font-size: 18px; }
+h1, h2, h3 { font-weight: 500; text-transform: uppercase; }
+h1 { color: #25282a; font-size: 36px; }
+h2 { font-size: 36px; }
+h3 { font-size: 26px; }
 .content p { margin-bottom: 30px; }
 a { color: #0076a8; text-decoration: underline; }
 a:focus, a:hover { color: #0076a8; text-decoration: none; }
@@ -63,17 +63,25 @@ section h2 { font-size: 36px; color: white; margin-top: 0; text-align: center; }
 section p { font-size: 18px; }
 
 section.white-bg { background: url('images/bg-white.png'); background-color: transparent; color: #2c2c2e; }
-section.white-bg h2 { color: #25282a; }
+section.white-bg h2 { color: #25282a; font-size: 36px; }
 section.white-bg h3 { color: #0076a8; font-size: 26px; }
 section.white-bg .row { background-color: white; }
 section.white-bg.grey-inner-bg .row { background-color: #edf0f3; }
+
+
+section.content h1 { color: white; }
+section.content h2 { color: #0076a8; font-size: 26px; }
+section.content h3 { color: #0076a8; font-size: 26px; }
+section.content.white-bg h1 { color: #25282a; }
+section.content.white-bg h2 { color: #0076a8; font-size: 26px; }
+section.content.white-bg h3 { color: #0076a8; font-size: 26px; }
 
 
 .btn-primary,
 .btn-primary:hover { background-color: #0076a8; }
 
 .btn-primary,
-.gform_button { background-color: #0076a8; border-radius: 25px; color: white; font-size: 20px; display: inline-block; padding: 5px 15px; text-transform: uppercase; }
+.gform_button { background-color: #0076a8; border-radius: 25px; color: white; font-size: 20px; font-weight: 500; display: inline-block; padding: 5px 15px; text-transform: uppercase; }
 .btn-primary:hover,
 .gform_button:hover{ background-color: #454141; border-color: inherit; }
 .btn-primary:hover { border-color: #d6cec3; }
@@ -111,7 +119,7 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 ------------------------------------------------------------------*/
 
 .navbar { margin-bottom: 0; }
-.navbar-default .navbar-nav li >  a { color: white; font-size: 20px; }
+.navbar-default .navbar-nav li >  a { color: white; font-size: 20px; font-family: "freight-sans-pro-book", sans-serif; text-decoration: none; }
 
 
 
@@ -132,14 +140,14 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 
 .home-3-header-columns { height: 475px; padding: 0;}
 .home-3-header-columns .row { padding: 0;}
-.home-3-header-columns .box { color: white; font-size: 20px; height: 475px; text-align: center; }
-.home-3-header-columns .box h3 { font-size: 36px; }
+.home-3-header-columns .box { color: white; font-size: 20px; font-weight: 500; height: 475px; text-align: center; }
+/*.home-3-header-columns .box h2 { font-size: 36px; }*/
 .home-3-header-columns .box hr { margin-bottom: 10px; }
 
 .second-header { }
 section.second-header .row { padding: 50px 20px; }
 .second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0076a8 !important; font-size: 48px; padding: 25px; text-align: right; text-transform: uppercase; }
-.second-header p { font-size: 18px; padding: 10px 0; }
+.second-header p { padding: 10px 0; }
 
 
 .home-meaningful-places .container { }
@@ -150,6 +158,7 @@ section.second-header .row { padding: 50px 20px; }
 .home-news .row { padding-bottom: 0; padding-top: 0; }
 .home-news h2 { background-color: #0076a8; border-radius: 0 0 20px 20px;font-size: 20px; width: 50%; }
 .home-news time { color: #7c878e; font-size: 14px; }
+.home-news ul.news-items { margin-right: 12.5%; }
 .home-news ul li { padding: 15px 0; }
 .home-news ul li.news-item { border-top: 2px solid black; }
 .home-news .news-item:first-child { border-top: none; }

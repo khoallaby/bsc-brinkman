@@ -1,6 +1,6 @@
 <section class="container-fluid home-news">
     <div class="container">
-        <div class="row">
+        <div class="row no-gutter">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <h2>News</h2>
                 <ul class="news-items list-unstyled">
