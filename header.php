@@ -42,7 +42,7 @@
 
             $social_icons = get_field( 'social_media_links', 'option' );
             foreach( (array)$social_icons as $social_icon ) {
-	            $target = isset( $social_icon['new_window'] ) ? ' target="' . $social_icon['new_window'] . '"' : '';
+	            $target = isset( $social_icon['new_window'] ) ? ' ' .$social_icon['new_window'] : '';
 	            echo '<li><a href="' . $social_icon['link'] . '"' . $target . '><i class="fa ' . $social_icon['icon'] . ' fa-fw"></i></a></li>';
             }
             ?>
