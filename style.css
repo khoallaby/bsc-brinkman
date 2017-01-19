@@ -45,15 +45,15 @@ Description: Website Design
 ------------------------------------------------------------------*/
 
 
-body { font-family: 'Open Sans', sans-serif; }
+body { font-family: freight-sans-pro, sans-serif; }
 h1 { color: #00539b; font-size: 40px; font-weight: 800; text-transform: uppercase; }
 h2, h3 { font-family: 'Lora', serif; text-transform: uppercase; }
 .content h2 { color: #464141; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: bold; margin: 40px 0 30px; }
 .content h3 { color: #77c044; font-size: 25px; font-weight: bold; margin-top: 0; }
 .content h4 { color: #383636; font-size: 20px; font-weight: bold; }
 .content p { margin-bottom: 30px; }
-a { color: #0091da; }
-a:focus, a:hover { }
+a { color: #0091da; text-decoration: underline; }
+a:focus, a:hover { color: #0091da; text-decoration: none; }
 
 hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto 20px auto; }
 
@@ -62,7 +62,7 @@ section .row { padding: 30px 0; }
 section h2 { font-size: 36px; color: white; margin-top: 0; text-align: center; }
 section p { font-size: 18px; }
 
-section.white-bg { background: url('images/bg-white.png'); background-color: transparent; }
+section.white-bg { background: url('images/bg-white.png'); background-color: transparent; color: #2c2c2e; }
 section.white-bg h2 { color: #25282a; }
 section.white-bg h3 { color: #0091da; font-size: 26px; }
 section.white-bg .row { background-color: white; }
@@ -77,7 +77,8 @@ section.white-bg.grey-inner-bg .row { background-color: #edf0f3; }
 .btn-primary:hover,
 .gform_button:hover{ background-color: #454141; border-color: inherit; }
 .btn-primary:hover { border-color: #d6cec3; }
-
+a.btn-primary { text-decoration: none; }
+a.btn-primary::after { content: " >"; padding-left: 30px; }
 
 
 /*------------------------------------------------------------------
@@ -138,7 +139,7 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 .second-header { }
 section.second-header .row { padding: 50px 20px; }
 .second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0091da !important; font-size: 48px; padding: 25px; text-align: right; text-transform: uppercase; }
-.second-header p { color: #2c2c2e; font-size: 18px; padding: 10px 0; }
+.second-header p { font-size: 18px; padding: 10px 0; }
 
 
 .home-meaningful-places .container { }
@@ -179,6 +180,17 @@ section.second-header .row { padding: 50px 20px; }
 footer { background-color: #171819; }
 
 
+.footer-menu li { list-style-type: none; font-size: 18px; }
+.footer-menu > li { display: inline-block; padding-left: 20px; }
+.footer-menu > li > h3 { color: white; min-height: 60px; padding-left: 20px; }
+.footer-menu > li > ul { border-left: 2px solid black; min-height: 100px; padding-left: 20px; }
+.footer-menu > li > ul > li > a::after { content: " >"; }
+.footer-menu > li:first-child > ul { border-left: none; }
+
+footer .copyright { color: #7c878e; padding-bottom: 50px; }
+footer .social-media li { border-right: 1px solid #0091da; display: inline-block; padding: 0 5px; }
+footer .social-media li:last-child { border-right: none; }
+footer .social-media li a { color: white; }
 
 
 
@@ -217,6 +229,7 @@ footer { background-color: #171819; }
     .non-negotiables .row { padding: 30px 70px; }
     .non-negotiables .row > div > p { padding: 0 70px; }
 
+    .footer-menu > li.col-md-2 { width: 20%; }
 }
 
 
