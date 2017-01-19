@@ -57,11 +57,15 @@ a:focus, a:hover { }
 
 hr.blue-bar { border-top: 2px solid #0091da; width: 50px; margin: 0 auto 20px auto; }
 
-section { background-color: #25282a; padding: 30px 0; }
-section h2 { font-size: 36px; color: white; margin-top: 0; }
-section.white-bg { background: url('images/bg-white.png'); background-color: transparent; padding: 0; }
+section { background-color: #25282a; }
+section .row { padding: 30px 0; }
+section h2 { font-size: 36px; color: white; margin-top: 0; text-align: center; }
+section p { font-size: 18px; }
+
+section.white-bg { background: url('images/bg-white.png'); background-color: transparent; }
 section.white-bg h2 { color: #25282a; }
-section.white-bg .container { background-color: white; padding: 40px 0; }
+section.white-bg h3 { color: #0091da; font-size: 26px; }
+section.white-bg .row { background-color: white; }
 
 
 .btn-primary,
@@ -125,18 +129,20 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 
 
 .home-3-header-columns { height: 475px; padding: 0;}
+.home-3-header-columns .row { padding: 0;}
 .home-3-header-columns .box { color: white; font-size: 20px; height: 475px; text-align: center; }
 .home-3-header-columns .box h3 { font-size: 36px; }
 .home-3-header-columns .box hr { margin-bottom: 10px; }
 
 .second-header { }
-section.second-header .container{ padding: 50px 60px; }
+section.second-header .row{ padding: 50px 20px; }
 .second-header h2 { background-color: #edf0f3; border-radius: 50px 0 50px 0; color: #0091da; font-size: 48px; padding: 25px; text-align: right; text-transform: uppercase; }
-.second-header p { color: #2c2c2e; font-size: 18px; padding: 20px 0; }
+.second-header p { color: #2c2c2e; font-size: 18px; padding: 10px 0; }
 
 
 .home-meaningful-places .container { }
 .home-meaningful-places .container .item { padding: 0; }
+.home-meaningful-places .container .item:first-child { padding: 0; }
 /*------------------------------------------------------------------
     Blog
 ------------------------------------------------------------------*/
