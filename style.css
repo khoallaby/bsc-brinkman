@@ -24,6 +24,7 @@ Description: Website Design
     Home Page
     Blog
     Sidebar
+    Shared Elements
     Pages
     Footer
 ------------------------------------------------------------------*/
@@ -81,9 +82,9 @@ section.content.white-bg h3 { color: #0076a8; font-size: 26px; }
 .btn-primary:hover { background-color: #0076a8; }
 
 .btn-primary,
-.gform_button { background-color: #0076a8; border-radius: 25px; color: white; font-size: 20px; font-weight: 500; display: inline-block; padding: 5px 15px; text-transform: uppercase; }
+.gform_button { background-color: #0076a8; border-radius: 25px; color: white; font-size: 20px; font-weight: 500; display: inline-block; padding: 5px 15px; }
 .btn-primary:hover,
-.gform_button:hover{ background-color: #454141; border-color: inherit; }
+.gform_button:hover{ background-color: #0076a8; border-color: inherit; }
 .btn-primary:hover { border-color: #d6cec3; }
 a.btn-primary { text-decoration: none; }
 a.btn-primary::after { content: " >"; padding-left: 30px; }
@@ -138,7 +139,7 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 
 
 
-.home-3-header-columns { height: 475px; padding: 0;}
+.home-3-header-columns { padding: 0; }
 .home-3-header-columns .row { padding: 0;}
 .home-3-header-columns .box { color: white; font-size: 20px; font-weight: 500; height: 475px; text-align: center; }
 /*.home-3-header-columns .box h2 { font-size: 36px; }*/
@@ -174,6 +175,18 @@ section.second-header .row { padding: 50px 20px; }
 ------------------------------------------------------------------*/
 
 
+
+
+/*------------------------------------------------------------------
+    Shared Elements
+------------------------------------------------------------------*/
+
+
+
+.what-we-do .row { padding: 0; }
+.what-we-do .ls-layer a { color: white; text-decoration: none; }
+
+
 /*------------------------------------------------------------------
     Pages
 ------------------------------------------------------------------*/
@@ -191,15 +204,16 @@ footer { background-color: #171819; }
 
 .footer-menu li { list-style-type: none; font-size: 18px; }
 .footer-menu > li { display: inline-block; padding-left: 20px; }
-.footer-menu > li > h3 { color: white; min-height: 60px; padding-left: 20px; }
+.footer-menu > li > h3 { color: white; font-size: 20px; min-height: 60px; padding-left: 20px; }
 .footer-menu > li > ul { border-left: 2px solid black; min-height: 100px; padding-left: 20px; }
 .footer-menu > li > ul > li > a::after { content: " >"; }
 .footer-menu > li:first-child > ul { border-left: none; }
 
-footer .copyright { color: #7c878e; padding-bottom: 50px; }
+footer .copyright { color: #7c878e; padding-bottom: 50px; padding-top: 20px; }
 footer .social-media li { border-right: 1px solid #0076a8; display: inline-block; padding: 0 5px; }
 footer .social-media li:last-child { border-right: none; }
 footer .social-media li a { color: white; }
+footer .social-media li .fa { font-size: 18px; }
 
 
 

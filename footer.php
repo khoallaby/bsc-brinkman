@@ -2,33 +2,11 @@
     	    </div>
 	    </section>
         <?php } ?>
-        <footer class="container-fluid footer-widgets">
+        <footer class="container-fluid footer">
             <div class="container">
                 <div class="row">
 	                <?php get_template_part('inc/footer-menu'); ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1">
-                    <div class="row">
-                    <?php
-                    #$menu = wp_get_nav_menu_items('Header Menu');
-                    /*
-                    foreach( range(1,5) as $i ) {
-                        $offset = $i == 1 ? 'col-md-offset-1' : '';
-                        echo '<div class="col-xs-12 col-md-2 ' . $offset . '">';
-                        if ( is_active_sidebar( 'footer-widget-' . $i ) )
-                            dynamic_sidebar( 'footer-widget-' . $i );
-                        echo '</div>';
-                    }
-                    */
-                    ?>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <footer class="container-fluid footer">
-        	<div class="container">
                 <div class="row copyright">
                     <div class="col-xs-12 col-md-10">
                         <?php echo '&copy; ' .  date('Y') . ' ' . get_bloginfo('name') . ', Inc. All rights reserved. Website by <a href="#">A-Train Marketing</a>'; ?>
