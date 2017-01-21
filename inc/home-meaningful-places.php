@@ -9,11 +9,10 @@
                 while ( $query->have_posts() ) : $query->the_post();
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-4 item">
-                        <?php
-                        echo '<a href="' . get_permalink() . '" title="' . esc_attr( get_the_title() ) . '" class="img-container">';
-                        echo get_the_post_thumbnail( get_the_ID(), 'large', array('class' => 'img-responsive img') );
-                        echo '</a>';
-                        ?>
+                        <figure class="image-hover">
+                            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), 'large', array('class' => 'img-responsive img') ); ?></a>
+                            <figcaption class="image-hover-text"><h3><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h3></figcaption>
+                        </figure>
                     </div>
                     <?php
                 endwhile;

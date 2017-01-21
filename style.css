@@ -47,7 +47,7 @@ Description: Website Design
 
 
 body { font-family: "freight-sans-pro", sans-serif; }
-body p { font-family: "freight-sans-pro-book", sans-serif; font-size: 18px; }
+body p { font-family: "freight-sans-pro", sans-serif; font-size: 18px; font-weight: 400; }
 h1, h2, h3 { font-weight: 500; text-transform: uppercase; }
 h1 { color: #25282a; font-size: 36px; }
 h2 { font-size: 36px; }
@@ -120,7 +120,7 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 ------------------------------------------------------------------*/
 
 .navbar { margin-bottom: 0; }
-.navbar-default .navbar-nav li >  a { color: white; font-size: 20px; font-family: "freight-sans-pro-book", sans-serif; text-decoration: none; }
+.navbar-default .navbar-nav li >  a { color: white; font-size: 20px; font-family: "freight-sans-pro", sans-serif; text-decoration: none; }
 
 
 
@@ -141,7 +141,7 @@ nav.navbar .container-fluid.menu { background-color: #171819; }
 
 .home-3-header-columns { padding: 0; }
 .home-3-header-columns .row { padding: 0;}
-.home-3-header-columns .box { color: white; font-size: 20px; font-weight: 500; height: 475px; text-align: center; }
+.home-3-header-columns .box { color: white; font-size: 20px !important; font-weight: 500; height: 475px; text-align: center; }
 /*.home-3-header-columns .box h2 { font-size: 36px; }*/
 .home-3-header-columns .box hr { margin-bottom: 10px; }
 
@@ -181,6 +181,14 @@ section.second-header .row { padding: 50px 20px; }
     Shared Elements
 ------------------------------------------------------------------*/
 
+
+/* image hover */
+.image-hover { position: relative; padding: 0; margin: 0; }
+.image-hover img { display: block; max-width: 100%; height: auto; }
+.image-hover-text { background-color: rgba(0, 118, 168, .7); bottom: 0; color: white; font-weight: 500; height: 100%; left: 0; width: 100%; opacity: 0; padding: 0.75em 1em; position: absolute; z-index: 2; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-transition: opacity .3s ease-in-out; transition: opacity .3s ease-in-out; }
+.image-hover-text a { color: white; display: block; height: 100%; padding: 25% 0; width: 100%; text-decoration: none; }
+.image-hover-text h3 { margin: 0; }
+.image-hover:hover .image-hover-text { opacity: 1; }
 
 
 .what-we-do .row { padding: 0; }
@@ -259,5 +267,5 @@ footer .social-media li .fa { font-size: 18px; }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
+    .home-3-header-columns .box { padding: 0 90px; }
 }
