@@ -15,9 +15,6 @@ function brinkman_enqueue_styles() {
 		wp_get_theme()->get('Version')
 	);
 
-	#wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Lora|Open+Sans:200,300,400,500,600,800|Noto+Sans');
-
-
 
 }
 add_action( 'wp_enqueue_scripts', 'brinkman_enqueue_styles', 20 );
@@ -25,11 +22,10 @@ add_action( 'wp_enqueue_scripts', 'brinkman_enqueue_styles', 20 );
 
 
 
-// need to load this way late to override other plugins JS
 function brinkman_enqueue_js() {
-	wp_enqueue_script('brinkman');
+	echo '<script src="//use.typekit.net/sdi8wgu.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>';
 }
-add_action( 'wp_enqueue_scripts', 'brinkman_enqueue_js', 2000 );
+add_action( 'wp_head', 'brinkman_enqueue_js', 2 );
 
 
 
@@ -39,3 +35,9 @@ require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
 
 add_action( 'init', array(brinkman_cpt::get_instance(), 'init') );
 
+
+function vard($content) {
+	echo '<pre>';
+	var_dump($content);
+	echo '</pre>';
+}
