@@ -1,5 +1,6 @@
         <?php if( !is_front_page() ) { ?>
-    	    </div>
+                </div>
+            </div>
 	    </section>
         <?php } ?>
         <footer class="container-fluid footer">

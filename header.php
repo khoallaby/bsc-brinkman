@@ -76,8 +76,9 @@
 </nav>
 <?php
 if( !is_front_page() ) {
-get_template_part('inc/page-header');
+#get_template_part('inc/page-header');
 ?>
-<section class="container-fluid content">
-    <div class="row">
+<section class="container-fluid content white-bg">
+    <div class="container">
+        <div class="row">
 <?php } ?>
