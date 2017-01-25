@@ -2,9 +2,6 @@
 function brinkman_enqueue_styles() {
 	$parent_style = 'parent-style';
 
-	wp_register_script( 'slick-slider', get_stylesheet_directory_uri() . '/js/slick/slick.js', array('jquery'), '1.6' );
-	wp_register_style( 'slick-slider', get_stylesheet_directory_uri() . '/js/slick/slick.css', array(), '1.6' );
-	wp_register_style( 'slick-slider-theme', get_stylesheet_directory_uri() . '/js/slick/slick-theme.css', array(),  '1.6' );
 	#wp_register_script( 'brinkman', get_stylesheet_directory_uri() . '/js/brinkman.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 
