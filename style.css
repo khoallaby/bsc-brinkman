@@ -60,6 +60,7 @@ hr.blue-bar { border-top: 2px solid #0076a8; width: 50px; margin: 0 auto 20px au
 
 section { background-color: #25282a; color: white;}
 section .row { padding: 30px 0; }
+section.content > .container > .row { padding-top: 0; }
 section h2 { font-size: 36px; color: white; margin-top: 0; text-align: center; }
 section p { font-size: 18px; }
 
@@ -71,9 +72,9 @@ section.white-bg.grey-inner-bg .row { background-color: #edf0f3; }
 
 
 section.content h1 { color: white; }
-section.content h2 { color: #0076a8; font-size: 26px; }
+section.content h2 { color: #0076a8; font-size: 26px; text-align: left; }
 section.content h3 { color: #0076a8; font-size: 26px; }
-section.content.white-bg h1 { color: #25282a; }
+section.content.white-bg h1 { color: #25282a; text-align: center; }
 section.content.white-bg h2 { color: #0076a8; font-size: 26px; }
 section.content.white-bg h3 { color: #0076a8; font-size: 26px; }
 
@@ -112,7 +113,8 @@ a.btn-primary::after { content: " >"; padding-left: 30px; }
 nav.navbar { background-color: #25282a; }
 nav.navbar .container-fluid.menu { background-color: #171819; }
 
-
+nav.navbar .caret { border: 0; font-family: FontAwesome; height: auto; text-rendering: auto; width: auto; }
+nav.navbar .caret::before { content: "\f107"; }
 
 
 /*------------------------------------------------------------------
@@ -156,6 +158,8 @@ section.second-header .row { padding: 50px 20px; }
 .home-meaningful-places .container .item:first-child { padding: 0; }
 
 
+.non-negotiables { text-align: center; }
+
 .home-news .row { padding-bottom: 0; padding-top: 0; }
 .home-news h2 { background-color: #0076a8; border-radius: 0 0 20px 20px;font-size: 20px; width: 50%; }
 .home-news time { color: #7c878e; font-size: 14px; }
@@ -174,7 +178,14 @@ section.second-header .row { padding: 50px 20px; }
     Sidebar
 ------------------------------------------------------------------*/
 
+.sidebar-images { margin-bottom: 0; }
 
+.sidebar-team-members { background-color: #cbd4d7; padding: 20px 30px; }
+.sidebar-team-members ul li { display: block; float: left; position: relative; width: 33.33%; }
+.sidebar-team-members ul li a { background: rgba(0, 118, 168, 0.7); content: ""; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; transition: all .5s linear; }
+.sidebar-team-members ul li a:hover { background: none; display: block; }
+.sidebar-team-members li img { height: auto; max-width: 100%; }
+.sidebar-team-members h2 { background-color: #2c2c2e; color: white !important; font-size: 20px; padding: 10px 30px; }
 
 
 /*------------------------------------------------------------------
@@ -195,12 +206,28 @@ section.second-header .row { padding: 50px 20px; }
 .what-we-do .ls-layer a { color: white; text-decoration: none; }
 
 
+
 /*------------------------------------------------------------------
     Pages
 ------------------------------------------------------------------*/
 
+.content article { margin: 0 60px; }
 
 
+/* Projects - single */
+ul.content-list { }
+ul.content-list li { border-bottom: 1px solid #181818; }
+ul.content-list li:last-child { border-bottom: none; }
+ul.content-list li .image { padding: 0; }
+ul.content-list li p { margin-bottom: 0; }
+
+
+ul.sidebar-content-list { background-color: #edf0f3; }
+ul.sidebar-content-list li { border-bottom: 5px solid white; margin: 0 30px; text-align: center; }
+ul.sidebar-content-list li:last-child { border-bottom: none; }
+ul.sidebar-content-list li h3 { font-size: 60px !important; font-weight: 600; margin: 30px 0 0; }
+ul.sidebar-content-list li h3 sup { font-size: 30px; }
+ul.sidebar-content-list li p { font-size: 26px; font-weight: 500; text-transform: uppercase; }
 
 /*------------------------------------------------------------------
     Footer
@@ -257,7 +284,7 @@ footer .social-media li .fa { font-size: 18px; }
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 
-    .non-negotiables .row { padding: 30px 70px; }
+    .non-negotiables .row { padding: 30px 80px; }
     .non-negotiables .row > div > p { padding: 0 70px; }
 
     .footer-menu > li.col-md-2 { width: 20%; }
