@@ -9,8 +9,29 @@ class brinkman_cpt extends base_plugin {
 	}
 
 	public function init() {
-		$this->register_cpt('project', 'projects');
+		#add_action( 'init', array( $this, 'register_tax' ) );
+		$this->register_tax( 'project-category', 'project-categories', 'projects' );
+
+		$this->register_cpt('project', 'projects', array(
+			'taxonomies' => '',
+		) );
 		$this->register_cpt('team member', 'team members');
+
+	}
+
+
+	public function register_tax( $tax_name, $tax_name_plural, $post_type, $args = array() ) {
+
+		register_taxonomy(
+			$tax_name,
+			$post_type,
+			array(
+				'label' => __( $this::clean_name($tax_name_plural) ),
+				#'public' => false,
+				'rewrite' => false,
+				'hierarchical' => true,
+			)
+		);
 	}
 
 
@@ -78,5 +99,9 @@ class brinkman_cpt extends base_plugin {
 	}
 
 
+
+	public static function clean_name( $str ) {
+		return ucwords(str_replace( '-', ' ', $str ));
+	}
 
 }
