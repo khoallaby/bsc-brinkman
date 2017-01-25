@@ -1,14 +1,21 @@
 <?php
 function brinkman_enqueue_styles() {
-	$parent_style = 'parent-style';
+	// JS
 
 	#wp_register_script( 'brinkman', get_stylesheet_directory_uri() . '/js/brinkman.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	wp_register_script( 'isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.min.js', array(), '3.0.1', true );
+	wp_register_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.js', array( 'isotope' ), wp_get_theme()->get( 'Version' ), true );
+	
+	if( is_singular('projects') )
+		wp_enqueue_script( 'isotope-js' );
 
 
-	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+	// CSS
+
+	wp_enqueue_style( 'snowbank', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'child-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( $parent_style ),
+		array( 'snowbank' ),
 		wp_get_theme()->get('Version')
 	);
 
