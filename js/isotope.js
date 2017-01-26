@@ -1,4 +1,5 @@
-
+(function($){
+    $(document).ready(function() {
 
         // init Isotope
         var $grid = $('.grid').isotope({
@@ -62,3 +63,10 @@
         });
 
 
+
+        $(window).resize(function () {
+            //$grid('reLayout');
+            //console.log('rrrrr');
+        });
+    });
+})(jQuery);
