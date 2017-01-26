@@ -5,7 +5,7 @@
             <hr class="blue-bar" />
             <div class="">
                 <?php
-                $query = brinkman_cpt::get_query( 'projects' );
+                $query = brinkman_cpt::get_query( 'projects', array('posts_per_page' => 6) );
                 while ( $query->have_posts() ) : $query->the_post();
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-4 item">
