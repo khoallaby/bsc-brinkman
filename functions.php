@@ -39,6 +39,9 @@ require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
 
 add_action( 'init', array(brinkman_cpt::get_instance(), 'init') );
 
+update_option( 'medium_large_size_w', 975, true );
+add_image_size( 'project_vertical', 488, 549, true );
+
 
 function vard($content) {
 	echo '<pre>';
