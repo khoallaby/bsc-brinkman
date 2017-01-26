@@ -1,52 +1,64 @@
-// external js: isotope.pkgd.js
 
-// init Isotope
-var iso = new Isotope( '.grid', {
-    itemSelector: '.grid-item',
-    layoutMode: 'fitRows'
-});
 
-// filter functions
-var filterFns = {
-    // show if number is greater than 50
-    numberGreaterThan50: function( itemElem ) {
-        var number = itemElem.querySelector('.number').textContent;
-        return parseInt( number, 10 ) > 50;
-    },
-    // show if name ends with -ium
-    ium: function( itemElem ) {
-        var name = itemElem.querySelector('.name').textContent;
-        return name.match( /ium$/ );
-    }
-};
+        // init Isotope
+        var $grid = $('.grid').isotope({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            layoutMode: 'masonry',
+            //stamp: '.stamp',
+            //stamp: $grid.find('.tall'),
 
-// bind filter button click
-var filtersElem = document.querySelector('.filters-button-group');
-filtersElem.addEventListener( 'click', function( event ) {
-    // only work with buttons
-    if ( !matchesSelector( event.target, 'button' ) ) {
-        return;
-    }
-    var filterValue = event.target.getAttribute('data-filter');
-    // use matching filter function
-    filterValue = filterFns[ filterValue ] || filterValue;
-    iso.arrange({ filter: filterValue });
-});
+            getSortData: {
+                name: 'h3 a',
+                order: '[data-order] parseInt',
+                category: '[data-category]'
+            },
+            //sortBy : 'order', //'original-order',
+            //sortAscending: true,
+            masonry: {
+                columnWidth: '.grid-sizer',
+                isFitWidth: true
+            },
+            masonryHorizontal: {
+                columnHeight: '.grid-sizer'
+            }
+        });
 
-// change is-checked class on buttons
-var buttonGroups = document.querySelectorAll('.button-group');
-for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
-    var buttonGroup = buttonGroups[i];
-    radioButtonGroup( buttonGroup );
-}
+        /*
+        $(window).smartresize(function(){
+            $grid.isotope({
+                columnWidth: '.col-md-4'
+            });
+        });
+        */
 
-function radioButtonGroup( buttonGroup ) {
-    buttonGroup.addEventListener( 'click', function( event ) {
-        // only work with buttons
-        if ( !matchesSelector( event.target, 'button' ) ) {
-            return;
-        }
-        buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-        event.target.classList.add('is-checked');
-    });
-}
+        // filter functions
+        var filterFns = {
+            // show if number is greater than 50
+            numberGreaterThan50: function() {
+                var number = $(this).find('.number').text();
+                return parseInt( number, 10 ) > 50;
+            },
+            // show if name ends with -ium
+            ium: function() {
+                var name = $(this).find('.name').text();
+                return name.match( /ium$/ );
+            }
+        };
+        // bind filter button click
+        $('.filters-button-group').on( 'click', 'button', function() {
+            var filterValue = $( this ).attr('data-filter');
+            // use filterFn if matches value
+            filterValue = filterFns[ filterValue ] || filterValue;
+            $grid.isotope({ filter: filterValue });
+        });
+        // change is-checked class on buttons
+        $('.button-group').each( function( i, buttonGroup ) {
+            var $buttonGroup = $( buttonGroup );
+            $buttonGroup.on( 'click', 'button', function() {
+                $buttonGroup.find('.active').removeClass('active');
+                $( this ).addClass('active');
+            });
+        });
+
+
