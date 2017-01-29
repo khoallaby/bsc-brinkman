@@ -27,4 +27,6 @@ if( have_rows('banners') ):
 endif;
 
 
+brinkman_get_acf_sliders();
+
 get_footer();

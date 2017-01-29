@@ -32,6 +32,13 @@ function brinkman_enqueue_js() {
 add_action( 'wp_head', 'brinkman_enqueue_js', 2 );
 
 
+function brinkman_get_acf_sliders( ) {
+	if( get_field('show_impact_slider' ) )
+		get_template_part('inc/slider-impact');
+	if( get_field('show_what_we_do_slider' ) )
+		get_template_part('inc/slider-what-we-do');
+}
+
 
 
 require_once dirname( __FILE__ ) . '/functions/class.base.php';
