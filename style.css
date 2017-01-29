@@ -257,6 +257,14 @@ ul.sidebar-content-list li p { color: #25282a; font-size: 26px; font-weight: 500
 .banner-nn h2 { background-color: #0076a8; color: white; font-size: 60px; }
 .banner-nn p { color: white; font-size: 22px; padding: 40px 20px 0; }
 .banner-nn .row { padding: 0 50px; }
+
+.page-template-page-non-negotiables article { text-align: center; }
+.page-template-page-non-negotiables article p { text-align: center; }
+.page-template-page-non-negotiables article p:first-of-type { display: inline-block; max-width: 775px; }
+.page-template-page-non-negotiables article .btn-primary { margin-left: 20px; }
+.page-template-page-non-negotiables article .btn-primary:first-child { margin-left: 0; }
+
+
 /*------------------------------------------------------------------
     Footer
 ------------------------------------------------------------------*/
