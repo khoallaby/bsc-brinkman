@@ -87,8 +87,11 @@ section.content.white-bg h3 { color: #0076a8; font-size: 26px; }
 .btn-primary:hover,
 .gform_button:hover{ background-color: #0076a8; border-color: inherit; }
 .btn-primary:hover { border-color: #d6cec3; }
+.btn-primary:active,
+.btn-primary:active:focus{ background-color: #0076a8; }
+
 a.btn-primary { text-decoration: none; }
-a.btn-primary::after { content: " >"; padding-left: 30px; }
+.btn-primary::after { content: " >"; padding-left: 30px; }
 
 
 /*------------------------------------------------------------------
@@ -149,7 +152,7 @@ nav.navbar .caret::before { content: "\f107"; }
 
 .second-header { }
 section.second-header .row { padding: 50px 20px; }
-.second-header h2 { background-color: #edf0f3; color: #0076a8 !important; font-size: 48px; padding: 25px; text-align: right; text-transform: uppercase; }
+.second-header h2 { background-color: #edf0f3; color: #0076a8 !important; font-size: 48px; }
 .second-header p { padding: 10px 0; }
 
 
@@ -218,7 +221,7 @@ section.second-header .row { padding: 50px 20px; }
 .what-we-do .ls-layer a { color: white; text-decoration: none; }
 /*.what-we-do .ls-slide-backgrounds {opacity: .2; }*/
 
-.rounded-header { border-radius: 50px 0 50px 0; }
+.rounded-header { border-radius: 50px 0 50px 0; padding: 25px; text-align: right; }
 
 /*------------------------------------------------------------------
     Pages
@@ -251,6 +254,9 @@ ul.sidebar-content-list li p { color: #25282a; font-size: 26px; font-weight: 500
 
 /* Non negotiables */
 .banner-nn { height: 373px; }
+.banner-nn h2 { background-color: #0076a8; color: white; font-size: 60px; }
+.banner-nn p { color: white; font-size: 22px; padding: 40px 20px 0; }
+.banner-nn .row { padding: 0 50px; }
 /*------------------------------------------------------------------
     Footer
 ------------------------------------------------------------------*/
