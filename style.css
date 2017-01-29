@@ -265,6 +265,9 @@ ul.sidebar-content-list li p { color: #25282a; font-size: 26px; font-weight: 500
 .page-template-page-non-negotiables article .btn-primary:first-child { margin-left: 0; }
 
 
+/* Team Members */
+.single-team-members article h1 { margin-bottom: 0; }
+.single-team-members .content article h2 { font-size: 24px; text-align: center; }
 /*------------------------------------------------------------------
     Footer
 ------------------------------------------------------------------*/

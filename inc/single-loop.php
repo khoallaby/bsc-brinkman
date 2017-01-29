@@ -9,7 +9,7 @@
 	                echo '<div class="col-xs-12 col-sm-12 col-md-12">';
 
                 if(has_post_thumbnail()) {
-                    the_post_thumbnail('large', array('itemprop' => 'image','class' => 'img-responsive'));
+                    the_post_thumbnail('full', array('itemprop' => 'image','class' => 'img-responsive'));
                 }
                 echo '</div>';
 

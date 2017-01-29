@@ -23,6 +23,8 @@
 			endif;*/
 	} elseif( is_singular('projects') ) {
 		get_template_part('inc/sidebar-projects');
+	} elseif( is_singular('team-members') ) {
+		get_template_part('inc/sidebar-team-members');
 	} else {
 		if ( is_active_sidebar( 'sidebar-1' ) ) :
 			dynamic_sidebar( 'sidebar-1' );
