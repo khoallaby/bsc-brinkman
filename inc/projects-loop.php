@@ -1,84 +1,94 @@
-<div class="col-md-12">
+<section class="container-fluid content">
+    <div class="container">
+        <div class="row no-gutter">
 
-    <h1>Meaningful Places</h1>
-    <hr class="blue-bar" />
+            <div class="col-md-12">
 
-    <div class="text-center">
-        <ul class="menu-categories list-unstyled button-group filters-button-group">
-            <li><button data-filter="*">All</button></li>
-            <?php
-            $terms = get_terms( array(
-                'hide_empty' => false,
-                'taxonomy' => 'project-category'
-            ));
+            <h1>Meaningful Places</h1>
+            <hr class="blue-bar" />
 
-            foreach( $terms as $term )
-                echo sprintf( '<li><button data-filter=".%s">%s</button></li>', $term->slug, $term->name );
-            ?>
-        </ul>
-    </div>
+            <div class="text-center">
+                <ul class="menu-categories list-unstyled button-group filters-button-group">
+                    <li><button data-filter="*" class="active">All</button></li>
+			        <?php
+			        $terms = get_terms( array(
+				        'hide_empty' => false,
+				        'taxonomy' => 'project-category'
+			        ));
 
-    <div class="grid">
-    <?php
+			        foreach( $terms as $term )
+				        echo sprintf( '<li><button data-filter=".%s">%s</button></li>', $term->slug, $term->name );
+			        ?>
+                </ul>
+            </div>
 
-    $posts = $wp_query->get_posts();
+            <div class="grid">
+		        <?php
 
-
-    $args = array(
-	    'posts_per_page' => -1
-    );
-    $query = brinkman_cpt::get_query( 'projects', $args );
-    $posts = $query->get_posts();
-
-    $layout = array( 4, 8, 4, 8, '4 vert', 4, 4, 4 );
-    $i = 0;
+		        $posts = $wp_query->get_posts();
 
 
-    foreach( $posts as $post ) {
-	    // generate category names from taxonomy
-        if( $terms = get_the_terms( $post->ID, 'project-category' ) ){
-            $cats = array();
-            foreach( $terms as $term )
-	            #vard($term);
-                $cats[] = $term->slug;
-            $class = implode( ' ', $cats );
-        } else {
-		    $class = '';
-	    }
+		        $args = array(
+			        'posts_per_page' => -1
+		        );
+		        $query = brinkman_cpt::get_query( 'projects', $args );
+		        $posts = $query->get_posts();
 
-	    $grid_sizer = $i == 0 ? ' grid-sizer' : '';
-        #$grid_sizer = '';
-        if( $layout[$i] === '4 vert' ) {
-            $class .= ' stamp';
-	        $image_size = 'project_vertical';
-        } else {
-	        $image_size = 'medium_large';
-        }
-	    #$image_size = 'medium_large';
+		        $layout = array( 4, 8, 4, 8, '4 vert', 4, 4, 4 );
+		        #$layout = array( 8, 4, 4, '4 vert', 8, 4, 4, 4 );
+		        $i = 0;
 
-	    ?>
-        <div data-order="<?php echo ($i + 1); ?>" class="grid-item col-xs-12 col-sm-6 col-md-<?php echo $layout[$i] . $grid_sizer . ' ' . $class; ?>" data-category="<?php echo $class; ?>">
-            <figure class="image-hover">
-                <a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( get_the_title($post->ID) ); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), $image_size, array('class' => 'img-responsive img') ); ?></a>
-                <figcaption class="image-hover-text"><h3><a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( $post->post_title ); ?>"><?php echo $post->post_title; ?></a></h3></figcaption>
-            </figure>
+
+		        foreach( $posts as $post ) {
+			        // generate category names from taxonomy
+			        if( $terms = get_the_terms( $post->ID, 'project-category' ) ){
+				        $cats = array();
+				        foreach( $terms as $term )
+					        #vard($term);
+					        $cats[] = $term->slug;
+				        $class = implode( ' ', $cats );
+			        } else {
+				        $class = '';
+			        }
+
+			        $grid_sizer = $layout[$i] == 4 ? ' grid-sizer' : '';
+			        #$grid_sizer = '';
+			        if( $layout[$i] === '4 vert' ) {
+				        $class .= ' stamp';
+				        $image_size = 'project_vertical';
+			        } else {
+				        $image_size = 'medium_large';
+			        }
+			        #$image_size = 'medium_large';
+
+			        ?>
+                    <div data-order="<?php echo ($i + 1); ?>" class="grid-item col-xs-12 col-sm-6 col-md-<?php echo $layout[$i] . $grid_sizer . ' ' . $class; ?>" data-category="<?php echo $class; ?>">
+                        <figure class="image-hover">
+                            <a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( get_the_title($post->ID) ); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), $image_size, array('class' => 'img-responsive img') ); ?></a>
+                            <figcaption class="image-hover-text"><h3><a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( $post->post_title ); ?>"><?php echo $post->post_title; ?></a></h3></figcaption>
+                        </figure>
+                    </div>
+			        <?php
+			        $i++;
+		        }
+
+		        if ( $posts ) : foreach( $layouts as $layout ) :
+			        echo '<div class="row">';
+
+			        foreach( $layout as $col ) {
+
+			        }
+
+			        echo '</div>';
+		        endforeach; endif;
+		        ?>
+
+            </div><!-- end grid -->
         </div>
-        <?php
-        $i++;
-    }
 
-    if ( $posts ) : foreach( $layouts as $layout ) :
-        echo '<div class="row">';
+        <br /><br />
 
-        foreach( $layout as $col ) {
 
-        }
-
-    echo '</div>';
-    endforeach; endif;
-    ?>
-
-    </div><!-- end grid -->
-</div>
-
-<br /><br />
+        </div>
+    </div>
+</section>

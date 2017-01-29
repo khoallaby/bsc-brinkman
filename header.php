@@ -74,15 +74,3 @@
         </div>
     </div>
 </nav>
-<?php
-if( !is_front_page() ) {
-#get_template_part('inc/page-header');
-    if( is_singular('projects') )
-	    $content_bg = 'white-bg';
-    else
-        $content_bg = '';
-?>
-<section class="container-fluid content <?php echo $content_bg; ?>">
-    <div class="container">
-        <div class="row no-gutter">
-<?php } ?>
