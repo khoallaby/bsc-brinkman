@@ -216,6 +216,7 @@ section.second-header .row { padding: 50px 20px; }
 
 .what-we-do .row { padding: 0; }
 .what-we-do .ls-layer a { color: white; text-decoration: none; }
+/*.what-we-do .ls-slide-backgrounds {opacity: .2; }*/
 
 
 
@@ -247,6 +248,9 @@ ul.sidebar-content-list li h3 { font-size: 60px !important; font-weight: 600; ma
 ul.sidebar-content-list li h3 sup { font-size: 30px; text-transform: none; }
 ul.sidebar-content-list li p { color: #25282a; font-size: 26px; font-weight: 500; text-transform: uppercase; }
 
+
+/* Non negotiables */
+.banner-nn { height: 373px; }
 /*------------------------------------------------------------------
     Footer
 ------------------------------------------------------------------*/
