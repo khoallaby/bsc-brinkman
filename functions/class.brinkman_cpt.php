@@ -11,11 +11,14 @@ class brinkman_cpt extends base_plugin {
 	public function init() {
 		#add_action( 'init', array( $this, 'register_tax' ) );
 		$this->register_tax( 'project-category', 'project-categories', 'projects' );
+		$this->register_tax( 'team-category', 'team-categories', 'team-members' );
 
 		$this->register_cpt('project', 'projects', array(
 			'taxonomies' => '',
 		) );
-		$this->register_cpt('team member', 'team members');
+		$this->register_cpt('team member', 'team members', array(
+			'taxonomies' => '',
+		) );
 
 	}
 

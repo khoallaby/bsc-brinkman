@@ -3,17 +3,36 @@
         <div class="row no-gutter">
 
             <div class="col-md-12">
-
-            <h1>Meaningful Places</h1>
-            <hr class="blue-bar" />
+            <?php get_template_part('inc/page-header'); ?>
 
             <div class="text-center">
                 <ul class="menu-categories list-unstyled button-group filters-button-group">
                     <li><button data-filter="*" class="active">All</button></li>
 			        <?php
+
+			        $args = array(
+				        'posts_per_page' => -1
+			        );
+
+			        if( is_post_type_archive('projects') ) {
+				        $cpt = 'projects';
+				        $taxonomy = 'project-category';
+				        $layout = array( 4, 8, 4, 8, '4 vert', 4, 4, 4 );
+				        #$layout = array( 8, 4, 4, '4 vert', 8, 4, 4, 4 );
+
+                    } elseif( is_post_type_archive('team-members') ) {
+				        $cpt = 'team-members';
+				        $taxonomy = 'team-category';
+				        $layout = array( 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 );
+				        $args['meta_key'] = 'position';
+				        $args['orderby'] = 'meta_value';
+				        $args['order'] = 'DESC';
+
+                    }
+
 			        $terms = get_terms( array(
 				        'hide_empty' => false,
-				        'taxonomy' => 'project-category'
+				        'taxonomy' => $taxonomy
 			        ));
 
 			        foreach( $terms as $term )
@@ -25,26 +44,21 @@
             <div class="grid">
 		        <?php
 
+
 		        $posts = $wp_query->get_posts();
 
 
-		        $args = array(
-			        'posts_per_page' => -1
-		        );
-		        $query = brinkman_cpt::get_query( 'projects', $args );
+		        $query = brinkman_cpt::get_query( $cpt, $args );
 		        $posts = $query->get_posts();
 
-		        $layout = array( 4, 8, 4, 8, '4 vert', 4, 4, 4 );
-		        #$layout = array( 8, 4, 4, '4 vert', 8, 4, 4, 4 );
 		        $i = 0;
 
 
 		        foreach( $posts as $post ) {
 			        // generate category names from taxonomy
-			        if( $terms = get_the_terms( $post->ID, 'project-category' ) ){
+			        if( $terms = get_the_terms( $post->ID, $taxonomy ) ){
 				        $cats = array();
 				        foreach( $terms as $term )
-					        #vard($term);
 					        $cats[] = $term->slug;
 				        $class = implode( ' ', $cats );
 			        } else {

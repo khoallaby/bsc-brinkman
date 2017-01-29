@@ -113,7 +113,7 @@ a.btn-primary { text-decoration: none; }
 ------------------------------------------------------------------*/
 
 
-nav.navbar { background-color: #25282a; }
+nav.navbar { background-color: #25282a; border: none; }
 nav.navbar .container-fluid.menu { background-color: #171819; }
 
 nav.navbar .caret { border: 0; font-family: FontAwesome; height: auto; text-rendering: auto; width: auto; }
@@ -206,7 +206,7 @@ section.second-header .row { padding: 50px 20px; }
 ------------------------------------------------------------------*/
 
 
-.menu-categories { background-color: #171819; display: inline-block; text-align: center; -webkit-border-radius:25px; -moz-border-radius:25px; border-radius:25px; padding: 0 10px; }
+.menu-categories { background-color: #171819; display: inline-block; text-align: center; -webkit-border-radius:25px; -moz-border-radius:25px; border-radius:25px; margin: 20px 0 30px; padding: 0 10px; }
 .menu-categories li { border-right: 1px solid #25282a; display: inline-block; }
 .menu-categories li:last-child { border-right: none; }
 .menu-categories li a,

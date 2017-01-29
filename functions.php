@@ -6,7 +6,7 @@ function brinkman_enqueue_styles() {
 	wp_register_script( 'isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.js', array( 'jquery' ), '3.0.1', true );
 	wp_register_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.js', array( 'isotope' ), wp_get_theme()->get( 'Version' ), true );
 	
-	if( is_post_type_archive('projects') )
+	if( is_post_type_archive('projects') || is_post_type_archive('team-members') )
 		wp_enqueue_script( 'isotope-js' );
 
 
