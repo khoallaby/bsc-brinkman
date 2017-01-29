@@ -5,8 +5,9 @@
                 <h2>Impact</h2>
                 <hr class="blue-bar" />
 			    <?php
-                if( get_field('impact_slider') )
-                    echo do_shortcode( get_field('impact_slider') );
+                $slider_code = get_field('impact_slider', get_option( 'page_on_front' ));
+                if( $slider_code )
+                    echo do_shortcode( $slider_code );
                 ?>
             </div>
         </div>
