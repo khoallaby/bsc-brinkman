@@ -1,20 +1,21 @@
 <ul class="list-unstyled">
+    <li class="text-center"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/icon-info.png" /></li>
+    <li>
+        <h2><?php the_title(); ?></h2>
+        <?php echo get_field('title') ? '<h3>' . get_field('title') . '</h3>' :''; ?>
+    </li>
+    <?php
+    if( get_field('email') || get_field('phone') ):
+        echo '<li>';
+        if( get_field('email') )
+            echo '<div><i class="fa fa-envelope"></i> ' . get_field('email') . '</div>';
+        if( get_field('phone') )
+            echo '<div><i class="fa fa-phone"></i> ' . get_field('phone') . '</div>';
+        echo '</li>';
+    endif;
+    ?>
 
 <?php
-
-
-
-# extra content boxes
-
-if( get_field('email') || get_field('phone') ):
-    echo '<li>';
-	if( get_field('email') )
-		echo '<div><i class="fa fa-envelope"></i> ' . get_field('email') . '</div>';
-	if( get_field('phone') )
-		echo '<div><i class="fa fa-phone"></i> ' . get_field('phone') . '</div>';
-	echo '</li>';
-endif;
-
 
 # team members
 

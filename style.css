@@ -191,6 +191,13 @@ section.second-header .row { padding: 50px 20px; }
 .sidebar-team-members h2 { background-color: #2c2c2e; color: white !important; font-size: 20px; padding: 10px 30px; }
 
 
+.single-team-members .sidebar { background-color: #edf0f3; padding-top: 20px; }
+.single-team-members .sidebar li { border-bottom: 5px solid white; padding: 20px 0; margin: 0 35px; }
+.single-team-members .sidebar li:last-child { border-bottom: none; }
+.single-team-members .sidebar li .fa { margin-right: 5px; }
+.single-team-members .sidebar li .fa,
+.single-team-members .sidebar li h2 { color: #0076a8; margin: 0; }
+.single-team-members .sidebar li h3 { color: #25282a; font-size: 18px; margin: 0; }
 /*------------------------------------------------------------------
     Shared Elements
 ------------------------------------------------------------------*/
