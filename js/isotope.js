@@ -3,9 +3,9 @@
 
         // init Isotope
         var $grid = $('.grid').isotope({
+            layoutMode: 'masonry',
             itemSelector: '.grid-item',
             percentPosition: true,
-            layoutMode: 'masonry',
             //stamp: '.stamp',
             //stamp: $grid.find('.tall'),
 
@@ -14,22 +14,25 @@
                 order: '[data-order] parseInt',
                 category: '[data-category]'
             },
-            //sortBy : 'order', //'original-order',
-            //sortAscending: true,
+            sortBy : 'order', //'original-order',
+            sortAscending: true,
             masonry: {
-                columnWidth: '.grid-sizer',
+                columnWidth: '.col-md-4',
                 isFitWidth: true
-            },
-            masonryHorizontal: {
-                columnHeight: '.grid-sizer'
             }
         });
+
 
         /*
         $(window).smartresize(function(){
             $grid.isotope({
                 columnWidth: '.col-md-4'
             });
+            $grid('layout');
+        });
+
+        $(window).resize(function () {
+            $grid('layout');
         });
         */
 
@@ -63,10 +66,5 @@
         });
 
 
-
-        $(window).resize(function () {
-            //$grid('reLayout');
-            //console.log('rrrrr');
-        });
     });
 })(jQuery);
