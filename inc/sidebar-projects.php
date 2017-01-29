@@ -1,20 +1,5 @@
 <?php
 
-# images
-
-if( have_rows('header_images') ):
-	echo '<ul class="sidebar-images list-unstyled">';
-	while ( have_rows('header_images') ) : the_row();
-		$image = get_sub_field('image');
-		?>
-        <li>
-            <img src="<?php echo $image['sizes']['medium_large']; ?>" class="img-responsive" />
-        </li>
-		<?php
-	endwhile;
-	echo '</ul>';
-endif;
-
 
 # extra content boxes
 

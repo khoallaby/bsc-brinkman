@@ -243,7 +243,7 @@ ul.content-list li:last-child { border-bottom: none; }
 ul.content-list li .image { padding: 0; }
 ul.content-list li p { margin-bottom: 0; }
 
-
+ul.sidebar-images { margin-bottom: 0; }
 ul.sidebar-content-list { background-color: #edf0f3; }
 ul.sidebar-content-list li { border-bottom: 5px solid white; margin: 0 30px; text-align: center; }
 ul.sidebar-content-list li:last-child { border-bottom: none; }
