@@ -26,7 +26,7 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8">
                 <?php
-                if( $image = get_field('team_image') )
+                if( $image = get_field('team_image', get_option('page_on_front')) )
                     echo '<a href="/team-members"><img src="' . $image['url'] . '" class="img-responsive" /></a>';
                 ?>
             </div>
