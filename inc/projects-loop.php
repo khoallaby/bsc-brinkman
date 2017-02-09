@@ -26,14 +26,23 @@
 				        $layout = array( 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 );
 				        $args['meta_key'] = 'position';
 				        $args['orderby'] = 'meta_value';
-				        $args['order'] = 'DESC';
+				        $args['order'] = 'ASC';
 
                     }
 
-			        $terms = get_terms( array(
-				        'hide_empty' => false,
-				        'taxonomy' => $taxonomy
-			        ));
+
+                    $terms_args = array(
+	                    'hide_empty' => false,
+	                    'taxonomy' => $taxonomy
+                    );
+
+			        if( $taxonomy == 'team-category' ) {
+				        $terms_args['orderby'] = 'meta_value_num';
+				        $terms_args['order'] = 'ASC';
+				        $terms_args['meta_key'] = 'position';
+			        }
+
+			        $terms = get_terms( $terms_args);
 
 			        foreach( $terms as $term )
 				        echo sprintf( '<li><button data-filter=".%s">%s</button></li>', $term->slug, $term->name );
