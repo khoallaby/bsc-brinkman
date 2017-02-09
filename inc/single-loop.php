@@ -9,7 +9,8 @@
 	                echo '<div class="col-xs-12 col-sm-12 col-md-12">';
 
                 if(has_post_thumbnail()) {
-                    the_post_thumbnail('full', array('itemprop' => 'image','class' => 'img-responsive'));
+                    $size = is_singular( 'team-members' ) ? 'team_member_featured_image' : 'full';
+                    the_post_thumbnail( $size, array('itemprop' => 'image','class' => 'img-responsive') );
                 }
                 echo '</div>';
 
