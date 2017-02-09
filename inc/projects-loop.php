@@ -94,7 +94,7 @@
                     </div>
 			        <?php
 			        $i++;
-			        if( count($layout) < ($i_l-1) )
+			        if( ($i_l-1) < count($layout) )
 			            $i_l++;
 			        else
 				        $i_l = 0;
