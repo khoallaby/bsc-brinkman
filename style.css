@@ -94,6 +94,7 @@ a.btn-primary { text-decoration: none; }
 .btn-primary::after { content: " >"; padding-left: 30px; }
 
 
+.gform_button { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
 /*------------------------------------------------------------------
     Header
 ------------------------------------------------------------------*/
