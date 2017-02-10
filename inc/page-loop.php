@@ -13,7 +13,7 @@
 	            <?php
 	            if ( have_posts() ) : while ( have_posts() ) : the_post();
 		            if(has_post_thumbnail()) {
-			            the_post_thumbnail('large', array('itemprop' => 'image','class' => 'img-responsive'));
+			            the_post_thumbnail('full', array('itemprop' => 'image','class' => 'img-responsive'));
 		            }
 		            ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
