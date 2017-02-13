@@ -76,14 +76,12 @@
 			        }
 
 			        $grid_sizer = $layout[$i_l] == 4 ? ' grid-sizer' : '';
-			        #$grid_sizer = '';
 			        if( $layout[$i_l] === '4 vert' ) {
-				        $class .= ' stamp';
+				        #$class .= ' stamp';
 				        $image_size = 'project_vertical';
 			        } else {
 				        $image_size = 'medium_large';
 			        }
-			        #$image_size = 'medium_large';
 
 			        ?>
                     <div data-order="<?php echo ($i + 1); ?>" class="grid-item col-xs-12 col-sm-6 col-md-<?php echo $layout[$i_l] . $grid_sizer . ' ' . $class; ?>" data-category="<?php echo $class; ?>">
@@ -94,7 +92,7 @@
                     </div>
 			        <?php
 			        $i++;
-			        if( ($i_l-1) < count($layout) )
+			        if( ($i_l+1) < count($layout) )
 			            $i_l++;
 			        else
 				        $i_l = 0;
