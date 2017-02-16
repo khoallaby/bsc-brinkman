@@ -25,7 +25,7 @@
 				        $taxonomy = 'team-category';
 				        $layout = array( 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 );
 				        $args['meta_key'] = 'position';
-				        $args['orderby'] = 'meta_value';
+				        $args['orderby'] = 'meta_value_num';
 				        $args['order'] = 'ASC';
 
                     }
