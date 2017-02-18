@@ -1,7 +1,8 @@
-<div class="col-xs-12 col-sm-4 col-md-4">
+<?php $col_size = is_home() || is_single() ? 3 : 4; ?>
+<div class="col-xs-12 col-sm-<?php echo $col_size; ?> col-md-<?php echo $col_size; ?>">
     <div class="sidebar">
 	<?php
-	if(is_home() ) {
+	if(is_home() || is_single() ) {
 		if ( is_active_sidebar( 'sidebar-2' ) ) :
 			dynamic_sidebar( 'sidebar-2' );
 		endif;

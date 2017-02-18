@@ -185,7 +185,10 @@ section.second-header .row { padding: 50px 20px; }
     Blog
 ------------------------------------------------------------------*/
 
-
+.blog p.entry-meta { margin-bottom: 10px; }
+.blog section article .row { padding: 10px 0; }
+.blog .content article { margin-bottom: 30px; margin-top: 30px; }
+.blog .content article p { margin-bottom: 0; }
 
 /*------------------------------------------------------------------
     Sidebar
@@ -321,6 +324,8 @@ footer .social-media li .fa { font-size: 18px; }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px) {
+    .blog .content article { margin-bottom: 15px; margin-top: 15px; }
+
 }
 
 @media only screen and (min-width : 480px) {
