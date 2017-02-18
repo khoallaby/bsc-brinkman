@@ -21,10 +21,27 @@
                     }
 
                     while ( $query->have_posts() ) : $query->the_post();
-                    ?>
+                        $limit = 100;
+                        $the_excerpt = get_the_excerpt();
+                        // checks to see if excerpt is longer than $limit
+                        if( strlen($the_excerpt) > $limit ) {
+                            // substr by whole words
+                            $s = substr($the_excerpt, 0, $limit);
+                            $excerpt = substr($s, 0, strrpos($s, ' '));
+                            $excerpt = rtrim($excerpt, '?!.,\'";/\\'); // strips punctuation from the end of the string
+                            $excerpt = force_balance_tags( $excerpt );
+                            $more_link_text = 'Read More &gt;';
+                            $more_link = apply_filters( 'the_content_more_link', ' <a href="' . get_permalink() . "#more-" . get_the_ID() . "\" class=\"more-link\">$more_link_text</a>", $more_link_text );
+                            $excerpt_link = $excerpt . '... ' . $more_link;
+                        } else {
+                            $excerpt_link = get_the_content( 'Read More &gt;', true );
+                        }
+
+
+	                    ?>
                         <li class="news-item">
                             <?php #echo get_the_title() . ' <a href="' . get_permalink() . '" title="' . esc_attr( get_the_title() ) . '>Read more &gt;</a>'; ?>
-                            <p><?php echo get_the_content( 'Read More &gt;', true ); ?></p>
+                            <p><?php echo $excerpt_link; ?></p>
                             <time class="entry-date" datetime="<?php the_time(get_option( 'time_format' )); ?>" itemprop="datePublished" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time>
                         </li>
                     <?php
