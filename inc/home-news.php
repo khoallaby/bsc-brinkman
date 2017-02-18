@@ -6,9 +6,19 @@
                 <ul class="news-items list-unstyled">
                     <?php
                     $args = array(
-	                    'posts_per_page' => 2
+	                    'posts_per_page' => 2,
+                        'meta_key' => 'featured_news_post',
+                        'meta_value' => '1',
+	                    'order' => 'DESC',
+	                    'orderby' => 'post_date'
                     );
                     $query = brinkman_cpt::get_query( 'post', $args );
+
+                    if( $query->post_count === 0 ) {
+	                    unset($args['meta_key']);
+	                    unset($args['meta_value']);
+	                    $query = brinkman_cpt::get_query( 'post', $args );
+                    }
 
                     while ( $query->have_posts() ) : $query->the_post();
                     ?>
@@ -21,7 +31,7 @@
                     endwhile;
                     wp_reset_postdata();
                     ?>
-                    <div class="news-item"><a href="<?php echo home_url(); ?>">ALL NEWS &gt;</a></div>
+                    <div class="news-item"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">ALL NEWS &gt;</a></div>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8">
