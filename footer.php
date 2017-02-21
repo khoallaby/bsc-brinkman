@@ -6,7 +6,7 @@
                 </div>
                 <div class="row copyright">
                     <div class="col-xs-12 col-md-10">
-                        <?php echo '&copy; ' .  date('Y') . ' ' . get_bloginfo('name') . ', Inc. All rights reserved. Website by <a href="#">A-Train Marketing</a>'; ?>
+                        <?php echo '&copy; ' .  date('Y') . ' ' . get_bloginfo('name') . '. All rights reserved. Website by <a href="#">A-Train Marketing</a>'; ?>
                     </div>
 
                     <ul class="col-xs-12 col-md-2 list-unstyled text-right social-media">
