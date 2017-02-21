@@ -31,7 +31,8 @@
                 ?>
         </div>
         <div class="row no-gutter">
-            <div class="col-xs-12 col-sm-9 col-md-9">
+    <?php $col_size = is_singular('projects') ? 'col-sm-8 col-md-8' : 'col-sm-9 col-md-9'; ?>
+            <div class="col-xs-12 <?php echo $col_size; ?>">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
                     get_template_part('inc/page-header');
