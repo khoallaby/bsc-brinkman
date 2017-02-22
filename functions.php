@@ -52,9 +52,3 @@ add_image_size( 'project_vertical', 768, 864, true );
 add_image_size( 'team_member_featured_image', 1920, 770, array('center', 'top') );
 
 
-
-function vard($content) {
-	echo '<pre>';
-	var_dump($content);
-	echo '</pre>';
-}

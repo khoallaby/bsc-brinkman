@@ -98,15 +98,6 @@
 				        $i_l = 0;
 		        }
 
-		        if ( $posts ) : foreach( $layouts as $layout ) :
-			        echo '<div class="row">';
-
-			        foreach( $layout as $col ) {
-
-			        }
-
-			        echo '</div>';
-		        endforeach; endif;
 		        ?>
 
             </div><!-- end grid -->

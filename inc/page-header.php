@@ -21,7 +21,7 @@
 if( is_singular('team-members') )
     $h2_title = get_field('title');
 
-if( $h2_title )
+if( isset($h2_title) )
     echo '<h2>' . $h2_title . '</h2>';
 ?>
 <hr class="blue-bar" />

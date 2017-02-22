@@ -9,31 +9,34 @@ class brinkman_cpt extends base_plugin {
 	}
 
 	public function init() {
-		#add_action( 'init', array( $this, 'register_tax' ) );
-		$this->register_tax( 'project-category', 'project-categories', 'projects' );
-		$this->register_tax( 'team-category', 'team-categories', 'team-members' );
 
 		$this->register_cpt('project', 'projects', array(
-			'taxonomies' => '',
+			'taxonomies' => array(),
 		) );
 		$this->register_cpt('team member', 'team members', array(
-			'taxonomies' => '',
+			'taxonomies' => array(),
 		) );
+
+
+		$this->register_tax( 'project-category', 'project-categories', 'projects' );
+		$this->register_tax( 'team-category', 'team-categories', 'team-members' );
 
 	}
 
 
 	public function register_tax( $tax_name, $tax_name_plural, $post_type, $args = array() ) {
+		$defaults = array(
+			'label' => __( $this::clean_name($tax_name_plural) ),
+			#'public' => false,
+			'rewrite' => false,
+			'hierarchical' => true,
+		);
 
+		$args = wp_parse_args( $args, $defaults );
 		register_taxonomy(
 			$tax_name,
 			$post_type,
-			array(
-				'label' => __( $this::clean_name($tax_name_plural) ),
-				#'public' => false,
-				'rewrite' => false,
-				'hierarchical' => true,
-			)
+			$args
 		);
 	}
 
