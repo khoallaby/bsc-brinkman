@@ -155,8 +155,9 @@ nav.navbar .caret::before { content: "\f107"; }
 
 
 .home-3-header-columns { padding: 0; }
-.home-3-header-columns .row { padding: 0;}
+.home-3-header-columns .row { padding: 0; }
 .home-3-header-columns .box { color: white; font-size: 20px !important; font-weight: 500; height: 475px; text-align: center; }
+.home-3-header-columns .box a { display: block; height: 100%; position: absolute; width: 100%; z-index: 10; }
 /*.home-3-header-columns .box h2 { font-size: 36px; }*/
 .home-3-header-columns .box hr { margin-bottom: 10px; }
 
@@ -358,5 +359,5 @@ footer .social-media li .fa { font-size: 18px; }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-    .home-3-header-columns .box { padding: 0 90px; }
+    .home-3-header-columns .contents { padding: 0 90px; }
 }

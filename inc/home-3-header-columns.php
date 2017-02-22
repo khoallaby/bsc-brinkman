@@ -5,7 +5,7 @@ $image = get_field('3_header_columns_background');
 ?>
 <section class="container-fluid home-3-header-columns" style="background-image: url('<?php echo $image['url']; ?>');">
     <div class="container">
-        <div class="row">
+        <div class="row no-gutter">
 			<?php
 			if( have_rows('3_header_columns') ):
 				while ( have_rows('3_header_columns') ) : the_row();
@@ -13,6 +13,7 @@ $image = get_field('3_header_columns_background');
 					$background = get_sub_field('background');
 					?>
                     <div class="col-xs-12 col-sm-4 col-md-4 box" style="background-image: url('<?php echo $background['url']; ?>');">
+                        <a href="<?php echo esc_attr( get_field('3_header_columns_url') ); ?>"></a>
                         <div class="contents vcenter">
                             <img src="<?php echo $icon['sizes']['large']; ?>" /><br />
                             <h2><?php echo get_sub_field( 'title' ); ?></h2>
