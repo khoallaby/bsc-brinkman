@@ -53,10 +53,6 @@
             <div class="grid">
 		        <?php
 
-
-		        $posts = $wp_query->get_posts();
-
-
 		        $query = brinkman_cpt::get_query( $cpt, $args );
 		        $posts = $query->get_posts();
 
@@ -79,12 +75,14 @@
 			        if( $layout[$i_l] === '4 vert' ) {
 				        #$class .= ' stamp';
 				        $image_size = 'project_vertical';
+			        } elseif( $layout[$i_l] == 8 ) {
+				        $image_size = 'project_large';
 			        } else {
-				        $image_size = 'medium_large';
-			        }
+				        $image_size = 'project_small';
+                    }
 
 			        ?>
-                    <div data-order="<?php echo ($i + 1); ?>" class="grid-item col-xs-12 col-sm-6 col-md-<?php echo $layout[$i_l] . $grid_sizer . ' ' . $class; ?>" data-category="<?php echo $class; ?>">
+                    <div data-order="<?php echo ($i + 1); ?>" class="grid-item col-xs-12 col-sm-6 col-md-<?php echo $layout[$i_l] . $grid_sizer . ' ' . $class . ' ' . $image_size; ?>" data-category="<?php echo $class; ?>">
                         <figure class="image-hover">
                             <a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( get_the_title($post->ID) ); ?>"><?php echo get_the_post_thumbnail( get_the_ID(), $image_size, array('class' => 'img-responsive img') ); ?></a>
                             <figcaption class="image-hover-text"><h3><a href="<?php the_permalink( $post->ID ); ?>" title="<?php echo esc_attr( $post->post_title ); ?>"><?php echo $post->post_title; ?></a></h3></figcaption>

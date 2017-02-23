@@ -48,8 +48,10 @@ require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
 add_action( 'init', array(brinkman_cpt::get_instance(), 'init') );
 
 update_option( 'medium_large_size_w', 975, true );
-#add_image_size( 'project_vertical', 488, 549, true );
-add_image_size( 'project_vertical', 768, 864, true );
+
+add_image_size( 'project_vertical', 400, 450, true );
+add_image_size( 'project_small', 400, 225, true );
+add_image_size( 'project_large', 800, 450, true );
 add_image_size( 'team_member_featured_image', 1920, 770, array('center', 'top') );
 
 
