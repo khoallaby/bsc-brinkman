@@ -326,8 +326,9 @@ footer .social-media li .fa { font-size: 18px; }
 }
 
 @media only screen and (max-width : 640px) {
+    section.container-fluid.content { padding-left: 0; padding-right: 0; }
+    .content article { margin: 0 15px ; }
     .content article iframe { width: 100%; }
-    .page-template-page-non-negotiables .content article { margin: 0 15px ; }
     .banner-nn .row { padding: 0; }
     .banner-nn h2 { font-size: 35px; }
     .banner-nn p { font-size: 20px; padding: 0; }
