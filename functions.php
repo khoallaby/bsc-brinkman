@@ -4,7 +4,8 @@ function brinkman_enqueue_styles() {
 
 	#wp_register_script( 'brinkman', get_stylesheet_directory_uri() . '/js/brinkman.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 	wp_register_script( 'isotope', get_stylesheet_directory_uri() . '/js/isotope.pkgd.js', array( 'jquery' ), '3.0.1', true );
-	wp_register_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.js', array( 'isotope' ), wp_get_theme()->get( 'Version' ), true );
+	wp_register_script( 'imagesloaded', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'isotope' ), '4.1.1', true );
+	wp_register_script( 'isotope-js', get_stylesheet_directory_uri() . '/js/isotope.js', array( 'jquery', 'isotope', 'imagesloaded' ), wp_get_theme()->get( 'Version' ), true );
 	
 	if( is_post_type_archive('projects') || is_post_type_archive('team-members') )
 		wp_enqueue_script( 'isotope-js' );
