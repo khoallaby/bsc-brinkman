@@ -322,12 +322,12 @@ footer .social-media li .fa { font-size: 18px; }
 }
 
 @media only screen and (max-width : 479px) {
-.page-template-page-non-negotiables h1 { font-size: 32px; }
+.page-template-page-non-negotiables h1 { font-size: 30px; }
 }
 
 @media only screen and (max-width : 640px) {
 
-    .content article { margin: 0; }
+    .page-template-page-non-negotiables .content article { margin: 0 15px ; }
     .banner-nn .row { padding: 0; }
     .banner-nn h2 { font-size: 35px; }
     .banner-nn p { font-size: 20px; padding: 0; }
