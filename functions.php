@@ -52,6 +52,7 @@ update_option( 'medium_large_size_w', 975, true );
 add_image_size( 'project_vertical', 400, 450, true );
 add_image_size( 'project_small', 400, 225, true );
 add_image_size( 'project_large', 800, 450, true );
-add_image_size( 'team_member_featured_image', 1920, 770, array('center', 'top') );
+add_image_size( 'team_member_featured_image', 1170, 470, array('center', 'top') );
+add_image_size( 'full_featured_image', 1170, 99999 );
 
 

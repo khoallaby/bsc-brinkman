@@ -9,7 +9,13 @@
 	                echo '<div class="col-xs-12 col-sm-12 col-md-12">';
 
                 if(has_post_thumbnail()) {
-                    $size = is_singular( 'team-members' ) ? 'team_member_featured_image' : 'full';
+	                if( is_singular( 'team-members') )
+		                $size = 'team_member_featured_image';
+	                elseif( is_singular( 'projects') )
+		                $size = 'project_large';
+	                else
+		                $size = 'full_featured_image';
+
                     the_post_thumbnail( $size, array('itemprop' => 'image','class' => 'img-responsive') );
                 }
                 echo '</div>';
@@ -22,7 +28,7 @@
                             $image = get_sub_field('image');
                             ?>
                             <li>
-                                <img src="<?php echo $image['sizes']['medium_large']; ?>" class="img-responsive" />
+                                <img src="<?php echo $image['sizes']['project_small']; ?>" class="img-responsive" />
                             </li>
                             <?php
                         endwhile;
