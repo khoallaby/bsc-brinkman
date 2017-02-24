@@ -116,7 +116,7 @@ a.btn-primary { text-decoration: none; }
 ------------------------------------------------------------------*/
 
 
-nav.navbar { background-color: #25282a; border: none; }
+nav.navbar { background-color: #25282a; border: none; border-radius: unset; }
 nav.navbar .container-fluid.menu { background-color: #171819; }
 
 nav.navbar .caret { border: 0; font-family: FontAwesome; height: auto; text-rendering: auto; width: auto; }
