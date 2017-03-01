@@ -42,6 +42,78 @@ function brinkman_get_acf_sliders( ) {
 
 
 
+/**
+ * Get all the registered image sizes along with their dimensions
+ *
+ * @global array $_wp_additional_image_sizes
+ *
+ * @link http://core.trac.wordpress.org/ticket/18947 Reference ticket
+ * @return array $image_sizes The image sizes
+ */
+function _get_all_image_sizes() {
+	global $_wp_additional_image_sizes;
+	$default_image_sizes = array( 'thumbnail', 'medium', 'large' );
+
+	foreach ( $default_image_sizes as $size ) {
+		$image_sizes[$size]['width']	= intval( get_option( "{$size}_size_w") );
+		$image_sizes[$size]['height'] = intval( get_option( "{$size}_size_h") );
+		$image_sizes[$size]['crop']	= get_option( "{$size}_crop" ) ? get_option( "{$size}_crop" ) : false;
+	}
+
+	if ( isset( $_wp_additional_image_sizes ) && count( $_wp_additional_image_sizes ) )
+		$image_sizes = array_merge( $image_sizes, $_wp_additional_image_sizes );
+
+	return $image_sizes;
+}
+
+
+
+function brinkman_home_srcset( $sources, $size_array, $image_src, $image_meta, $attachment_id ) {
+
+
+	$all_sizes = _get_all_image_sizes();
+	$small_width = $all_sizes['project_small']['width'];
+	$large_width = $all_sizes['project_large']['width'];
+	$small_url = $sources[$small_width]['url'];
+	$large_url = $sources[$large_width]['url'];
+
+	$new_sources = array(
+		'400' => array(
+			'url' => $small_url,
+			'descriptor' => 'w',
+			'value' => '400'
+		),
+		'767' => array(
+			'url' => $large_url,
+			'descriptor' => 'w',
+			'value' => '767'
+		),
+		'1170' => array(
+			'url' => $small_url,
+			'descriptor' => 'w',
+			'value' => '1170'
+		)
+	);
+
+	foreach( $sources as $size => $meta ) {
+		if( $size < 768 && $size >= $small_width )
+			#$sources[ $size ]['url'] = $large_url;
+			$new_sources[300] = array(
+				'url' => $small_url,
+				'descriptor' => 'w',
+				'value' => '300'
+			);
+		else
+			$sources[$size]['url'] = $small_url;
+	}
+
+
+	return $new_sources;
+
+}
+
+
+
 require_once dirname( __FILE__ ) . '/functions/class.base.php';
 require_once dirname( __FILE__ ) . '/functions/class.brinkman_cpt.php';
 
