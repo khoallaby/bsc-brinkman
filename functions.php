@@ -28,7 +28,7 @@ add_action( 'wp_enqueue_scripts', 'brinkman_enqueue_styles', 20 );
 
 
 function brinkman_enqueue_js() {
-	echo '<script src="//use.typekit.net/sdi8wgu.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>';
+	echo '<script src="https://use.typekit.net/bfu3kvh.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script>';
 }
 add_action( 'wp_head', 'brinkman_enqueue_js', 2 );
 
