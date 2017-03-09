@@ -61,6 +61,7 @@ a { color: #0076a8; text-decoration: underline; }
 a:focus, a:hover { color: #0076a8; text-decoration: none; }
 
 hr.blue-bar { border-top: 2px solid #0076a8; width: 50px; margin: 0 auto 20px auto; }
+input, textarea { color: #25282a; }
 
 section { background-color: #25282a; color: white;}
 section .row { padding: 30px 0; }
